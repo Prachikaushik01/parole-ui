@@ -704,3 +704,473 @@ button.nav-item {
     grid-template-columns: 1fr;
   }
 }
+
+/* PAROLE — BLUE SECURITY THEME */
+:root {
+  --bg: #050914;
+  --surface: #0b1425;
+  --surface-hover: #101f36;
+  --border: #1d3554;
+  --text: #eaf4ff;
+  --muted: #8fa8c9;
+  --violet: #54a8ff;
+  --violet-light: #a8d8ff;
+  --green: #5ef0b1;
+}
+
+.app {
+  background:
+    radial-gradient(ellipse at 75% 0%, #1265a526, transparent 38%),
+    radial-gradient(ellipse at 50% 45%, #102c501c, transparent 60%),
+    var(--bg);
+  color: var(--text);
+}
+
+.sidebar {
+  background: linear-gradient(180deg, #0a1425, #070c18);
+  border-right-color: #1c3452;
+}
+
+.brand {
+  color: #f1f8ff;
+}
+
+.brand-icon {
+  color: #a8d8ff;
+  background: linear-gradient(145deg, #163d67, #0b172b);
+  border-color: #327fc4;
+  box-shadow: 0 0 22px #168bff20;
+}
+
+.dot,
+.footer-dot,
+.eyebrow {
+  color: #65b9ff;
+}
+
+.nav-item:hover {
+  background: #10233d;
+  color: #eaf5ff;
+}
+
+.nav-item.active {
+  color: #a8d8ff;
+  background: linear-gradient(110deg, #12345a, #101c32);
+  border-color: #347dc0;
+  box-shadow: inset 3px 0 #58b4ff;
+}
+
+.top-status {
+  color: #9ed4ff;
+}
+
+.date-label,
+.live-tag,
+.status-label {
+  border-color: #25486b;
+  background: #10223a;
+  color: #a8d8ff;
+}
+
+.metric-card,
+.panel {
+  background: linear-gradient(145deg, #101c30, #0a1120 75%);
+  border-color: #203650;
+  box-shadow:
+    inset 0 1px 0 #b4dcff08,
+    0 8px 24px #00000020;
+}
+
+.metric-card:hover {
+  border-color: #428ed0;
+  box-shadow: 0 8px 28px #168bff12;
+}
+
+.metric-icon {
+  background: linear-gradient(145deg, #183a61, #10213a);
+  color: #a8d8ff;
+}
+
+.metric-value {
+  color: #f3f8ff;
+}
+
+.tier {
+  border-bottom-color: #1c304a;
+}
+
+.tier-number {
+  background: linear-gradient(145deg, #173a61, #0d1c32);
+  border-color: #2d659b;
+  color: #a8d8ff;
+  box-shadow: inset 0 1px 0 #ffffff0b;
+}
+
+.tier-state,
+.pipeline-note,
+.pipeline-note span {
+  color: #78c3ff;
+}
+
+.shield {
+  border-color: #347fc1;
+  background: linear-gradient(145deg, #173c64, #0c1b31);
+  color: #b4e0ff;
+  box-shadow: 0 0 28px #168bff18;
+}
+
+.mini-row {
+  border-top-color: #1c304a;
+}
+
+.mini-row strong {
+  color: #9fd5ff;
+}
+
+th {
+  color: #86a9d0;
+  border-bottom-color: #29415e;
+}
+
+td {
+  border-bottom-color: #1c304a;
+}
+
+tbody tr:hover {
+  background: #12233a;
+}
+
+.risk.low {
+  background: #12372f;
+  color: #8ef2c8;
+}
+
+.risk.high {
+  background: #3a202b;
+  color: #ff9eae;
+}
+
+.decision.allowed {
+  color: #8ef2c8;
+}
+
+.decision.blocked {
+  color: #ff9eae;
+}
+
+.search-input {
+  border-color: #294968;
+  background: #091426;
+  color: #eaf4ff;
+}
+
+.search-input:focus {
+  border-color: #55b5ff;
+  box-shadow: 0 0 0 3px #168bff18;
+}
+
+.detail-grid {
+  background: #203650;
+  border-color: #203650;
+}
+
+.detail-grid > div {
+  background: #0c1728;
+}
+
+.reason-box {
+  border-color: #294968;
+  background: #0e1e33;
+}
+
+.reason-box strong {
+  color: #a8d8ff;
+}
+
+.reason-box p {
+  color: #b1c5df;
+}
+
+/* Subtle 3D depth — avoid excessive neon */
+.panel,
+.metric-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.panel::before,
+.metric-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #75caff55,
+    transparent
+  );
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .metric-card,
+  .panel {
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      transform 180ms ease;
+  }
+
+  .metric-card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Blue 3D-style agent network */
+.network-panel {
+  margin-bottom: 22px;
+  background:
+    radial-gradient(ellipse at 50% 45%, #10396730, transparent 65%),
+    linear-gradient(145deg, #0c192b, #080e1b);
+}
+
+.network-canvas {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  border: 1px solid #244568;
+  border-radius: 12px;
+  background: radial-gradient(ellipse at center, #102a49 0%, #07111f 72%);
+  perspective: 900px;
+}
+
+.network-grid {
+  position: absolute;
+  inset: -20%;
+  opacity: 0.28;
+  background-image:
+    linear-gradient(#3d83bd20 1px, transparent 1px),
+    linear-gradient(90deg, #3d83bd20 1px, transparent 1px);
+  background-size: 28px 28px;
+  transform: rotateX(8deg) scale(1.05);
+  mask-image: radial-gradient(ellipse, black 15%, transparent 78%);
+}
+
+.network-svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 390px;
+  filter: drop-shadow(0 0 10px #147dff15);
+}
+
+.network-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: node-float 4s ease-in-out infinite;
+}
+
+.network-node:nth-of-type(even) {
+  animation-delay: -2s;
+}
+
+.network-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 15px 4px 5px;
+  color: #a6bdd9;
+  font-size: 11px;
+}
+
+.network-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.network-legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-blue {
+  background: #5dbbff;
+  box-shadow: 0 0 8px #5dbbff80;
+}
+
+.legend-green {
+  background: #62e8c5;
+  box-shadow: 0 0 8px #62e8c580;
+}
+
+.legend-light {
+  background: #a8c8ff;
+  box-shadow: 0 0 8px #a8c8ff80;
+}
+
+.network-disclaimer {
+  color: #7f9ab9;
+  font-size: 10px;
+  margin: 10px 0 0;
+}
+
+@keyframes node-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -3px; }
+}
+
+@media (max-width: 600px) {
+  .network-canvas {
+    min-height: 240px;
+  }
+
+  .network-legend {
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .network-node {
+    animation: none;
+  }
+}
+
+
+/* PAROLE FUTURISTIC SIDEBAR — TARGETED FIX */
+
+.app .sidebar {
+  background: linear-gradient(160deg, #0b1930 0%, #050914 75%);
+  border-right: 1px solid #267ac866;
+  box-shadow: 8px 0 35px #007bff12;
+}
+
+.app .sidebar .nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin: 5px 0;
+  padding: 13px 14px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: #91a9c6;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.app .sidebar .nav-item:hover {
+  color: #e5f5ff;
+  background: linear-gradient(100deg, #123b64, #0b1a30);
+  border-color: #389dff65;
+  box-shadow: 0 0 20px #168bff20, inset 0 0 12px #168bff0c;
+  transform: translateX(3px);
+}
+
+.app .sidebar .nav-item.active {
+  color: #ffffff;
+  background: linear-gradient(100deg, #1263a94d, #087dff12);
+  border-color: #45aaff80;
+  box-shadow: inset 3px 0 0 #50baff, 0 0 22px #168bff20;
+}
+
+.app .sidebar .nav-item span:first-child {
+  color: #5dbbff;
+  transition: transform 0.25s ease, text-shadow 0.25s ease;
+}
+
+.app .sidebar .nav-item:hover span:first-child {
+  transform: scale(1.15);
+  text-shadow: 0 0 12px #50baff;
+}
+
+/* Futuristic cursor and keyboard focus */
+.app button,
+.app .clickable-row {
+  cursor: pointer;
+}
+
+.app button:focus-visible,
+.app .clickable-row:focus-visible {
+  outline: 2px solid #5dbbff;
+  outline-offset: 3px;
+}
+
+/* Glowing card hover */
+.app .metric-card,
+.app .panel {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.app .metric-card:hover,
+.app .panel:hover {
+  border-color: #398ed066;
+  box-shadow: 0 0 24px #168bff12, 0 12px 30px #00000030;
+}
+
+/* Modern scrollbar */
+.app {
+  scrollbar-color: #28679b #080f1d;
+  scrollbar-width: thin;
+}
+
+.app ::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.app ::-webkit-scrollbar-track {
+  background: #080f1d;
+}
+
+.app ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #55baff, #174675);
+  border-radius: 10px;
+}
+
+/* FUTURISTIC DASHBOARD CARDS */
+.app .metric-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #101f35, #091321) !important;
+  border: 1px solid #24466a !important;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px #00000025;
+  transition: all 0.3s ease !important;
+}
+
+.app .metric-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  width: 76%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #50baff, transparent);
+  opacity: 0.65;
+}
+
+.app .metric-card:hover {
+  transform: translateY(-5px);
+  border-color: #50baff !important;
+  box-shadow:
+    0 0 24px #168bff25,
+    0 12px 28px #00000040;
+}
+
+.app .metric-icon {
+  color: #64c2ff;
+  text-shadow: 0 0 12px #168bff70;
+}
+
+.app .metric-value {
+  color: #edf8ff;
+  text-shadow: 0 0 18px #168bff20;
+}
